@@ -1,0 +1,6 @@
+[user]
+	email = bblokar@gmail.com
+	name = zwx00
+
+[alias]
+	dotcom = "!git add -f \"$1\" && git commit -m \"Add $1\" #"
