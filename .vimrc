@@ -3,6 +3,7 @@ filetype plugin on
 filetype indent on
 syntax on
 
+set fillchars=""
 
 cmap w!! %!sudo tee > /dev/null %
 
