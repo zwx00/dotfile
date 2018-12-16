@@ -148,6 +148,7 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+autocmd BufWritePost *.py AsyncRun -post=checktime black %
 
 let g:user_emmet_leader_key='<C-Tab>'
 
