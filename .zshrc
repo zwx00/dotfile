@@ -18,7 +18,7 @@ antigen bundle sindresorhus/pure
 # Tell Antigen that you're done.
 antigen apply
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/.local/bin"
+export PATH="$HOME/.pyenv/bin:$HOME/.poetry/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/.local/bin"
 
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
@@ -28,3 +28,9 @@ unsetopt share_history
 mdread () { pandoc $* | lynx -stdin }
 
 alias sudo='sudo -E'
+fpath+=~/.zfunc
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
