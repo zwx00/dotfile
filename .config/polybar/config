@@ -1,0 +1,136 @@
+[bar/i3wmthemer_bar]
+
+
+monitor = ${env:MONITOR:}
+
+
+width = 100%
+height = 24
+radius = 0
+fixed-center = false
+
+background = #3A3A3A
+foreground = #aab0bc
+
+line-size = 3
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "Source Code Pro Semibold:pixelsize=10;1"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-2 = "Font Awesome 5 Brands:pixelsize=10;1"
+
+modules-left = wlan eth
+modules-center = i3
+modules-right = date pulseaudio
+
+tray-position = ${env:TRAY_POSITION:}
+;tray-padding =
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/i3]
+type = internal/i3
+format = <label-mode> <label-state>
+index-sort = true
+wrapping-scroll = false
+pin-workspaces = true
+
+
+label-mode-padding = 2
+label-mode-foreground = #FFFFFF
+label-mode-background = #BA2922
+
+label-focused = %index%
+label-focused-background = #262626
+label-focused-foreground = #FFFFFF
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-background = #262626
+label-unfocused-foreground = #FFFFFF
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = #262626
+label-visible-foreground = #FFFFFF
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-background = #BA2922
+label-urgent-padding = 2
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = #FFFFFF
+format-connected-background = #262626
+format-connected-prefix =
+format-connected-padding = 2
+label-connected = wifi: %essid%
+
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #10ce23
+
+[module/eth]
+type = internal/network
+interface = eth0
+interval = 3.0
+
+format-connected-padding = 2
+format-connected-foreground = #FFFFFF
+format-connected-background = #262626
+format-connected-prefix = " "
+format-connected-prefix-foreground = #10ce23
+label-connected = %local_ip%
+
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %Y-%m-%d"
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-foreground = #FFFFFF
+format-background = #262626
+format-padding = 2
+
+label = %date% %time%
+
+[module/pulseaudio]
+
+type = internal/pulseaudio
+
+format-volume = "snd: <label-volume>"
+
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
