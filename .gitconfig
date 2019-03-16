@@ -4,3 +4,5 @@
 
 [alias]
 	dotcom = "!git add -f \"$1\" && git commit -m \"Add $1\" #"
+[credential]
+	helper = !aws codecommit credential-helper $@
