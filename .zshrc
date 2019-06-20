@@ -29,6 +29,8 @@ export LESS='-R '
 unsetopt share_history
 
 mdread () { pandoc $* | lynx -stdin }
+gitauth () { ssh-add .ssh/id_rsa }
+
 
 alias sudo='sudo -E'
 fpath+=~/.zfunc
@@ -37,3 +39,5 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 eval "$(ssh-agent)"
+
+eval "$(thefuck --alias)"
