@@ -36,6 +36,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-python/python-syntax'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
@@ -58,7 +60,7 @@ Plugin 'w0rp/ale'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Shougo/denite.nvim'
-
+Plugin 'posva/vim-vue'
 call vundle#end()
 
 filetype plugin indent on
@@ -150,7 +152,8 @@ let g:ale_sign_warning = '.'
 autocmd BufWritePost *.js AsyncRun -post=checktime eslint --fix %
 autocmd BufWritePost *.py AsyncRun -post=checktime black %
 
-let g:user_emmet_leader_key='<C-Tab>'
+let g:user_emmet_leader_key='<C-E>'
+let g:typescript_compiler_options="--experimentalDecorators"
 
 " autoreload for .vimrc
 
@@ -160,3 +163,4 @@ augroup myvimrchooks
 augroup END
 
 command! Settings e ~/.vimrc
+

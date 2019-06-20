@@ -15,6 +15,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
+# Plugins
+antigen bundle twang817/zsh-ssh-agent
+
 # Tell Antigen that you're done.
 antigen apply
 
