@@ -148,8 +148,12 @@ let g:airline_theme='minimalist'
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
+let g:ale_fixers = { 'js': ['standard'] }
+let g:ale_linters = { 'js': ['standard'] }
+let g:ale_fixers_ignore = ['eslint']
+let g:ale_linters_ignore = ['eslint']
 
-autocmd BufWritePost *.js AsyncRun -post=checktime eslint --fix %
+autocmd BufWritePost *.js AsyncRun -post=checktime standard --fix %
 autocmd BufWritePost *.py AsyncRun -post=checktime black %
 
 let g:user_emmet_leader_key='<C-E>'
@@ -163,4 +167,3 @@ augroup myvimrchooks
 augroup END
 
 command! Settings e ~/.vimrc
-
