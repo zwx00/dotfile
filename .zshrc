@@ -29,8 +29,9 @@ export LESS='-R '
 unsetopt share_history
 
 mdread () { pandoc $* | lynx -stdin }
-gitauth () { ssh-add .ssh/id_rsa }
 
+bindkey "5C" forward-word
+bindkey "5D" backward-word
 
 alias sudo='sudo -E'
 fpath+=~/.zfunc

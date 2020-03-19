@@ -39,6 +39,7 @@ call vundle#begin()
 Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-python/python-syntax'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Chiel92/vim-autoformat'
@@ -148,16 +149,26 @@ let g:airline_theme='minimalist'
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
-let g:ale_fixers = { 'js': ['standard'] }
-let g:ale_linters = { 'js': ['standard'] }
+let g:ale_fixers = { 'javascript': ['standard'] }
+let g:ale_linters = { 'javascript': ['standard'] }
+let g:ale_javascript_standard_use_global = 1
+let g:ale_javascript_standard_executable = '/usr/local/bin/semistandard'
 let g:ale_fixers_ignore = ['eslint']
 let g:ale_linters_ignore = ['eslint']
+
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_executable = '/usr/local/bin/eslint'
 
 autocmd BufWritePost *.js AsyncRun -post=checktime standard --fix %
 autocmd BufWritePost *.py AsyncRun -post=checktime black %
 
 let g:user_emmet_leader_key='<C-E>'
 let g:typescript_compiler_options="--experimentalDecorators"
+
+" ctrlp
+
+let g:ctrlp_custom_ignore = 'node_modules\|git'
+
 
 " autoreload for .vimrc
 
